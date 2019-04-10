@@ -4,7 +4,13 @@ import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-
+/**
+ * 
+* @ClassName: Server  
+* <p>Description: TODO(这里用一句话描述这个类的作用)  </p>
+* @date 2019年4月10日 下午3:24:01  
+*
+ */
 public class Server {
 
 	final static int PROT = 8765;
