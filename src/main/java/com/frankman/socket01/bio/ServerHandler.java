@@ -5,7 +5,14 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
-
+/**
+ * 
+* @ClassName: ServerHandler  
+* <p>Description: TODO(这里用一句话描述这个类的作用)  </p>
+* @author 宋建 songjian@zhihuihutong.com 
+* @date 2019年4月10日 下午4:01:23  
+*
+ */
 public class ServerHandler implements Runnable{
 
 	private Socket socket ;
@@ -19,6 +26,7 @@ public class ServerHandler implements Runnable{
 		BufferedReader in = null;
 		PrintWriter out = null;
 		try {
+			
 			in = new BufferedReader(new InputStreamReader(this.socket.getInputStream()));
 			out = new PrintWriter(this.socket.getOutputStream(), true);
 			String body = null;

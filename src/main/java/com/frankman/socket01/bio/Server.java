@@ -7,7 +7,7 @@ import java.net.Socket;
 /**
  * 
 * @ClassName: Server  
-* <p>Description: TODO(这里用一句话描述这个类的作用)  </p>
+* <p>Description: 服务端 </p>
 * @date 2019年4月10日 下午3:24:01  
 *
  */
@@ -19,13 +19,14 @@ public class Server {
 		
 		ServerSocket server = null;
 		try {
+			
 			server = new ServerSocket(PROT);
 			System.out.println(" server start .. ");
 			//进行阻塞
 			Socket socket = server.accept();
 			//新建一个线程执行客户端的任务
 			new Thread(new ServerHandler(socket)).start();
-			
+		
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -38,27 +39,5 @@ public class Server {
 			}
 			server = null;
 		}
-		
-		
-		
 	}
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 }
