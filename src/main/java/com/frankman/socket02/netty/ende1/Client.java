@@ -13,7 +13,13 @@ import io.netty.handler.codec.DelimiterBasedFrameDecoder;
 import io.netty.handler.codec.FixedLengthFrameDecoder;
 import io.netty.handler.codec.string.StringDecoder;
 import io.netty.handler.codec.string.StringEncoder;
-
+/**
+ * 
+* @ClassName: Client  
+* <p>Description: zh </p>
+* @date 2019年5月30日 上午10:18:29  
+*
+ */
 public class Client {
 
 	public static void main(String[] args) throws Exception {

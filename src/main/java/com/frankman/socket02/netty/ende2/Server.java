@@ -16,7 +16,13 @@ import io.netty.handler.codec.DelimiterBasedFrameDecoder;
 import io.netty.handler.codec.FixedLengthFrameDecoder;
 import io.netty.handler.codec.string.StringDecoder;
 import io.netty.handler.codec.string.StringEncoder;
-
+/**
+ * 
+* @ClassName: Server  
+* <p>Description: 设置定长数据，不是分隔符  </p>
+* @date 2019年5月30日 上午11:40:19  
+*
+ */
 public class Server {
 
 	public static void main(String[] args) throws Exception{

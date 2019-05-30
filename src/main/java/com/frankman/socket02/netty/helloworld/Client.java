@@ -8,7 +8,13 @@ import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
-
+/**
+ * 
+* @ClassName: Client  
+* <p>Description: 客户端 只需要一个线程组 处理连接  </p>
+* @date 2019年5月30日 上午9:23:34  
+*
+ */
 public class Client {
 
 	public static void main(String[] args) throws Exception{
@@ -30,6 +36,7 @@ public class Client {
 		//ChannelFuture cf2 = b.connect("127.0.0.1", 8764).sync();
 		//发送消息
 		Thread.sleep(1000);
+		//数据一定是buff类型的   =========================================================
 		cf1.channel().writeAndFlush(Unpooled.copiedBuffer("777songjian".getBytes()));
 		cf1.channel().writeAndFlush(Unpooled.copiedBuffer("666songjian".getBytes()));
 		//cf2.channel().writeAndFlush(Unpooled.copiedBuffer("888".getBytes()));

@@ -5,7 +5,15 @@ import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelHandlerAdapter;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelPromise;
-
+/**
+ * 
+* @ClassName: ServerHandler  
+* <p>Description: 继承 ChannelHandlerAdapter 实现其中的方法、处理数据   channelHandlerApapter
+* 或者实现ChannelHandler 这个接口也是可以的 
+*  </p>
+* @date 2019年5月30日 上午9:26:18  
+*
+ */
 public class ServerHandler extends ChannelHandlerAdapter {
 
 
