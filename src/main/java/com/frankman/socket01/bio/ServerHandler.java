@@ -8,8 +8,7 @@ import java.net.Socket;
 /**
  * 
 * @ClassName: ServerHandler  
-* <p>Description: TODO(这里用一句话描述这个类的作用)  </p>
-* @author 宋建 songjian@zhihuihutong.com 
+* <p>Description: 服务端新线程接受数据   </p>
 * @date 2019年4月10日 下午4:01:23  
 *
  */
