@@ -38,10 +38,10 @@ public class Client {
 		Thread.sleep(1000);
 		//数据一定是buff类型的   =========================================================
 		cf1.channel().writeAndFlush(Unpooled.copiedBuffer("777songjian".getBytes()));
-		cf1.channel().writeAndFlush(Unpooled.copiedBuffer("666songjian".getBytes()));
+		//cf1.channel().writeAndFlush(Unpooled.copiedBuffer("666songjian".getBytes()));
 		//cf2.channel().writeAndFlush(Unpooled.copiedBuffer("888".getBytes()));
-		Thread.sleep(2000);
-		cf1.channel().writeAndFlush(Unpooled.copiedBuffer("888songjian".getBytes()));
+		//Thread.sleep(2000);
+		//cf1.channel().writeAndFlush(Unpooled.copiedBuffer("888songjian".getBytes()));
 		//cf2.channel().writeAndFlush(Unpooled.copiedBuffer("666".getBytes()));
 		
 		cf1.channel().closeFuture().sync();
