@@ -5,6 +5,8 @@ import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelHandlerAdapter;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelPromise;
+import io.netty.handler.timeout.IdleState;
+import io.netty.handler.timeout.IdleStateEvent;
 /**
  * 
 * @ClassName: ServerHandler  
@@ -65,6 +67,19 @@ public class ServerHandler extends ChannelHandlerAdapter {
 			throws Exception {
 		System.out.println("————————————————————————————————————exceptionCaught方法——————————————————————————————————————————");
 		ctx.close();
+	}
+	//心跳添加 
+	@Override
+	public void userEventTriggered(ChannelHandlerContext ctx, Object evt)
+			throws Exception {
+		if(evt instanceof IdleStateEvent){
+			IdleStateEvent e = (IdleStateEvent) evt; 
+			if(e.state() == IdleState.READER_IDLE){
+				System.out.println("1111111111111111111");
+			}else if(e.state() == IdleState.WRITER_IDLE){
+				System.out.println("2222222222222222222");
+			}	
+		}
 	}
 
 }

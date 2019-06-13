@@ -1,5 +1,7 @@
 package com.frankman.socket02.netty.helloworld;
 
+import java.util.concurrent.TimeUnit;
+
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelInitializer;
@@ -8,6 +10,7 @@ import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
+import io.netty.handler.timeout.IdleStateHandler;
 /**
  * 
 * @ClassName: Server  
@@ -37,6 +40,12 @@ public class Server {
 			protected void initChannel(SocketChannel sc) throws Exception {
 				//3 在这里配置具体数据接收方法的处理
 				sc.pipeline().addLast(new ServerHandler());
+				//下边是心跳添加 handler中心跳超过多久没数据可以 直接断开 
+				sc.pipeline().addLast("idleStateHandler",new IdleStateHandler(
+						5,
+						0,
+						0,TimeUnit.SECONDS));
+				sc.pipeline().addLast("heartbeat",new HeartbeatHandler());
 			}
 		});
 		
