@@ -48,6 +48,7 @@ public class Client {
 		
 //		cf.channel().writeAndFlush(Unpooled.wrappedBuffer("bbbb$_".getBytes()));
 		cf.channel().writeAndFlush(Unpooled.wrappedBuffer("cccc$_".getBytes()));
+		
 		//cf.channel().writeAndFlush(Unpooled.wrappedBuffer("heartbeat*".getBytes()));
 //		cf.channel().writeAndFlush(Unpooled.wrappedBuffer("ccccsongjian*".getBytes()));
 		
