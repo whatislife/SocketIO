@@ -20,7 +20,7 @@ import io.netty.handler.codec.string.StringEncoder;
 * @date 2019年5月30日 上午10:18:29  
 *
  */
-public class Client {
+public class Client2 {
 
 	public static void main(String[] args) throws Exception {
 		
@@ -47,7 +47,7 @@ public class Client {
 		//ChannelFuture cf = b.connect("localhost", 3400).sync();
 		
 //		cf.channel().writeAndFlush(Unpooled.wrappedBuffer("bbbb$_".getBytes()));
-		cf.channel().writeAndFlush(Unpooled.wrappedBuffer("cccc$_".getBytes()));
+		//cf.channel().writeAndFlush(Unpooled.wrappedBuffer("cccc$_".getBytes()));
 		//cf.channel().writeAndFlush(Unpooled.wrappedBuffer("heartbeat*".getBytes()));
 //		cf.channel().writeAndFlush(Unpooled.wrappedBuffer("ccccsongjian*".getBytes()));
 		
