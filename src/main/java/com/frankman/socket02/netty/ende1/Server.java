@@ -40,6 +40,7 @@ public class Server {
 				//设置字符串形式的解码
 				sc.pipeline().addLast(new StringDecoder());
 				sc.pipeline().addLast(new ServerHandler());
+				//sc.pipeline().addLast(new ServerHandler2());
 			}
 		});
 		

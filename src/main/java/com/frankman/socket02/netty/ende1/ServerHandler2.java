@@ -4,7 +4,7 @@ import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelHandlerAdapter;
 import io.netty.channel.ChannelHandlerContext;
 
-public class ServerHandler extends ChannelHandlerAdapter {
+public class ServerHandler2 extends ChannelHandlerAdapter {
 
 
 	@Override
@@ -14,11 +14,8 @@ public class ServerHandler extends ChannelHandlerAdapter {
 
 	@Override
 	public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
-		String request = (String)msg;
-		System.out.println("Server1 :" + msg);
+		System.out.println("Server2 :" + msg);
 		String reponsess = "数据开始1";
-		//https://www.cnblogs.com/zeroone/p/8490930.html
-		//ctx.fireChannelRead(msg); 推送第二个handler
 		ctx.writeAndFlush(Unpooled.copiedBuffer(reponsess.getBytes()));
 		Thread.sleep(60000);
 		String response = "服务器响应2：" + msg + "$_";
