@@ -38,17 +38,17 @@ public class Server {
 		.childHandler(new ChannelInitializer<SocketChannel>() {
 			@Override
 			protected void initChannel(SocketChannel sc) throws Exception {
-				/*sc.pipeline().addLast("idleStateHandler",new IdleStateHandler(
-						10,
+				sc.pipeline().addLast("idleStateHandler",new IdleStateHandler(
+						15,
 						0,
-						0,TimeUnit.SECONDS));*/
+						0,TimeUnit.SECONDS));
 				//3 在这里配置具体数据接收方法的处理
 				sc.pipeline().addLast(new ServerHandler());
 				//下边是心跳添加 handler中心跳超过多久没数据可以 直接断开 
-				sc.pipeline().addLast("idleStateHandler",new IdleStateHandler(
+				/*sc.pipeline().addLast("idleStateHandler",new IdleStateHandler(
 						5,
 						0,
-						0,TimeUnit.SECONDS));
+						0,TimeUnit.SECONDS));*/
 				sc.pipeline().addLast("heartbeat",new HeartbeatHandler());
 			}
 		});
