@@ -9,6 +9,8 @@ import java.util.concurrent.ExecutionException;
 public class Client implements Runnable{
 	
 	
+	
+	
 
 	private AsynchronousSocketChannel asc ;
 	
